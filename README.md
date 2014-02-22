@@ -3,7 +3,7 @@ Implementation of well known algorithms in scala for learning purposes.
 Uses scala implicits to add sorting methods to List (in case if algorithm works with immutable data structure) and Array (on case of mutual).
 Check `SortingExtensions` object for details
 
-# [Sorting algorithms](http://www.sorting-algorithms.com/)
+**[Sorting algorithms](http://www.sorting-algorithms.com/)**
 
 * Insertion sort
 * Merge sort
