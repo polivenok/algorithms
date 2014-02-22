@@ -13,5 +13,9 @@ class ImmutableListSortingSpec extends PropSpec with Checkers {
     check((a: List[Int]) => a.mergeSort == a.sorted)
   }
 
+  property("Sorted using quick sort") {
+    check((a: List[Int]) => a.quickSort == a.sorted)
+  }
+
 
 }

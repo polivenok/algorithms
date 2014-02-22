@@ -9,9 +9,8 @@ class ArraySortingSpec extends PropSpec with Checkers {
     check((a: Array[Int]) => a.insertionSort.sameElements(a.sorted))
   }
 
-  property("Sorted using merge sort") {
-    check((a: Array[Int]) => a.mergeSort.sameElements(a.sorted))
+  property("Sorted using quick sort") {
+    check((a: Array[Int]) => a.quickSort.sameElements(a.sorted))
   }
-
 
 }
