@@ -7,7 +7,7 @@ import scala.collection.mutable.ArrayBuffer
  * @param value of root element
  * @tparam T type of vlaue
  */
-class BinarySearchTree[T<% Ordered[T]](val value: T) {
+class BinarySearchTree[T <% Ordered[T]](val value: T) {
 
   private var _left: BinarySearchTree[T] = null
   private var _right: BinarySearchTree[T] = null
@@ -18,12 +18,12 @@ class BinarySearchTree[T<% Ordered[T]](val value: T) {
   }
 
   def insert(value: T) {
-    if (value > this.value){
-        if(_right == null) _right = new BinarySearchTree[T](value)
-        else _right.insert(value)
+    if (value > this.value) {
+      if (_right == null) _right = new BinarySearchTree[T](value)
+      else _right.insert(value)
     }
     else {
-      if(_left == null) _left = new BinarySearchTree[T](value)
+      if (_left == null) _left = new BinarySearchTree[T](value)
       else _left.insert(value)
     }
   }
@@ -57,10 +57,10 @@ class BinarySearchTree[T<% Ordered[T]](val value: T) {
     arr
   }
 
-  def exists(value: T):Boolean = {
-    if(value == this.value) return true
-    if(value > this.value) if(_right == null) false else _right.exists(value)
-    else if(_left == null) false else _left.exists(value)
+  def exists(value: T): Boolean = {
+    if (value == this.value) return true
+    if (value > this.value) if (_right == null) false else _right.exists(value)
+    else if (_left == null) false else _left.exists(value)
   }
 
 }
