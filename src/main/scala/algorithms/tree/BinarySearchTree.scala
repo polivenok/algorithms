@@ -65,12 +65,3 @@ class BinarySearchTree[T<% Ordered[T]](val value: T) {
 
 }
 
-object TestApp extends App {
-  val numbers = List(6, 9, 2, 1, 5)
-  val tree = new BinarySearchTree(numbers)
-  println(tree.sorted())
-  println(tree.exists(11))
-  println(tree.exists(1))
-
-}
-
