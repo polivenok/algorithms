@@ -1,7 +1,7 @@
 import algorithms.tree.BinarySearchTree
 import org.scalatest.{Matchers, FlatSpec}
 
-class TreeSpec extends FlatSpec with Matchers {
+class BinarySearchTreeSpec extends FlatSpec with Matchers {
 
   val tree = new BinarySearchTree[Int](List(6, 9, 2, 1, 5))
 
@@ -9,14 +9,11 @@ class TreeSpec extends FlatSpec with Matchers {
     tree.sorted shouldBe List(1, 2, 5, 6, 9)
   }
 
-  it should "find existing value" in {
-    tree.exists(1) shouldBe true
+  it should "find value which is present in a tree" in {
+    tree.contains(1) shouldBe true
   }
 
-  it should  "not find existing value" in {
-    tree.exists(100) shouldBe false
+  it should  "not find value which is not present in a tree" in {
+    tree.contains(100) shouldBe false
   }
-
-
-
 }

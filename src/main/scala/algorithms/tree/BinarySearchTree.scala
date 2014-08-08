@@ -5,8 +5,8 @@ import scala.collection.mutable.ArrayBuffer
 /**
  * Simple binary search tree.
  * @param value of root element
- * @tparam T type of vlaue
- */
+ * @tparam T type of value
+  */
 class BinarySearchTree[T <% Ordered[T]](val value: T) {
 
   private var _left: BinarySearchTree[T] = null
@@ -57,10 +57,10 @@ class BinarySearchTree[T <% Ordered[T]](val value: T) {
     arr
   }
 
-  def exists(value: T): Boolean = {
+  def contains(value: T): Boolean = {
     if (value == this.value) return true
-    if (value > this.value) if (_right == null) false else _right.exists(value)
-    else if (_left == null) false else _left.exists(value)
+    if (value > this.value) if (_right == null) false else _right.contains(value)
+    else if (_left == null) false else _left.contains(value)
   }
 
 }
