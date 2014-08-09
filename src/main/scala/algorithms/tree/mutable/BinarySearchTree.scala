@@ -1,30 +1,30 @@
-package algorithms.tree
+package algorithms.tree.mutable
 
 import scala.collection.mutable.ArrayBuffer
 
 /**
- * Simple binary search tree.
+ * Simple binary search tree (mutable).
  * @param value of root element
  * @tparam T type of value
-  */
-class BinarySearchTree[T <% Ordered[T]](val value: T) {
+*/
+class BinarySearchTree[T <% Ordered[T]](value: T) {
 
   private var _left: BinarySearchTree[T] = null
   private var _right: BinarySearchTree[T] = null
 
   def this(list: List[T]) {
     this(list.head)
-    list.tail.foreach(insert)
+    list.tail.foreach(this + _)
   }
 
-  def insert(value: T) {
+  def +(value: T) {
     if (value > this.value) {
       if (_right == null) _right = new BinarySearchTree[T](value)
-      else _right.insert(value)
+      else _right + value
     }
     else {
       if (_left == null) _left = new BinarySearchTree[T](value)
-      else _left.insert(value)
+      else _left + value
     }
   }
 
@@ -32,28 +32,28 @@ class BinarySearchTree[T <% Ordered[T]](val value: T) {
 
   def right = _right
 
-  def preorder(callback: (T) => Unit) {
+  def preOrder(callback: T => Unit) {
     callback(value)
-    if (_left != null) _left.preorder(callback)
-    if (_right != null) _right.preorder(callback)
+    if (_left != null) _left.preOrder(callback)
+    if (_right != null) _right.preOrder(callback)
   }
 
-  def postorder(callback: (T) => Unit) {
-    if (_left != null) _left.postorder(callback)
-    if (_right != null) _right.postorder(callback)
+  def postOrder(callback: T => Unit) {
+    if (_left != null) _left.postOrder(callback)
+    if (_right != null) _right.postOrder(callback)
     callback(value)
 
   }
 
-  def inorder(callback: (T) => Unit) {
-    if (_left != null) _left.inorder(callback)
+  def inOrder(callback: T => Unit) {
+    if (_left != null) _left.inOrder(callback)
     callback(value)
-    if (_right != null) _right.inorder(callback)
+    if (_right != null) _right.inOrder(callback)
   }
 
   def sorted() = {
     val arr = new ArrayBuffer[T]()
-    inorder(arr.append(_))
+    inOrder(arr.append(_))
     arr
   }
 

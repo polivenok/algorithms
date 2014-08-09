@@ -17,7 +17,7 @@ Check `SortingExtensions` object for details
 #### Tree structure
 
 * [Binary Search Tree](http://en.wikipedia.org/wiki/Binary_search_tree).
-Check `BinarySearchTree` class for very simple implementation with traverse and contains methods. 
+Check `BinarySearchTree` for mutable and immutable implementation with traverse and contains methods. 
 
 #### Useful online resources 
  1. [Coursera, Algorithms: Design and Analysis from Standford](https://www.coursera.org/course/algo), [Part2](https://www.coursera.org/course/algo2)  
