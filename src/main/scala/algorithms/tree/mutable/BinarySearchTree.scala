@@ -12,7 +12,7 @@ class BinarySearchTree[T <% Ordered[T]](value: T) {
   private var _left: BinarySearchTree[T] = null
   private var _right: BinarySearchTree[T] = null
 
-  def this(list: List[T]) {
+  def this(list: T*) {
     this(list.head)
     list.tail.foreach(this + _)
   }

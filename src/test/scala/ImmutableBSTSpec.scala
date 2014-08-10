@@ -13,7 +13,8 @@ class ImmutableBSTSpec extends FlatSpec with Matchers {
     tree.contains(1) shouldBe true
   }
 
-  it should  "not find value which is not present in a tree" in {
-    tree.contains(100) shouldBe false
+  it should  "not find removed element in a tree" in {
+    tree.remove(1).contains(1) shouldBe false
   }
+
 }

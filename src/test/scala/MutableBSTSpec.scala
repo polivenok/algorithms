@@ -4,7 +4,7 @@ import org.scalatest.{Matchers, FlatSpec}
 
 class MutableBSTSpec extends FlatSpec with Matchers {
 
-  val tree = new BinarySearchTree[Int](List(6, 9, 2, 1, 5))
+  val tree = new BinarySearchTree[Int](6, 9, 2, 1, 5)
 
   "A Binary Search Tree" should "sort values in order" in {
     tree.sorted shouldBe List(1, 2, 5, 6, 9)
