@@ -6,9 +6,7 @@ Tests are written in scala test using property based testing. To run tests execu
 
 #### [Sorting algorithms](http://www.sorting-algorithms.com/)
 
-Implementation uses scala implicits to add sorting methods to List (in case if algorithm works with immutable data structures in a functional way) and Array (in case of usual imperative style with mutable data structures).
-
-Check `SortingExtensions` object for details
+[Implementation](https://github.com/polivenok/algorithms/blob/master/src/main/scala/algorithms/sorting/SortingExtensions.scala) uses scala implicits to add sorting methods to List (in case if algorithm works with immutable data structures in a functional way) and Array (in case of usual imperative style with mutable data structures).
 
 * [Insertion sort](http://www.sorting-algorithms.com/insertion-sort)
 * [Merge sort](http://www.sorting-algorithms.com/merge-sort)
@@ -16,8 +14,7 @@ Check `SortingExtensions` object for details
 
 #### Tree structure
 
-* [Binary Search Tree](http://en.wikipedia.org/wiki/Binary_search_tree).
-Check `BinarySearchTree` for mutable and immutable implementation with traverse and contains methods. 
+* [Binary Search Tree](http://en.wikipedia.org/wiki/Binary_search_tree). [Mutable](https://github.com/polivenok/algorithms/blob/master/src/main/scala/algorithms/tree/mutable/BinarySearchTree.scala) and [immutable and functional-like](https://github.com/polivenok/algorithms/blob/master/src/main/scala/algorithms/tree/immutable/BinarySearchTree.scala).
 
 #### Useful online resources 
  1. [Coursera, Algorithms: Design and Analysis from Standford](https://www.coursera.org/course/algo), [Part2](https://www.coursera.org/course/algo2)  
