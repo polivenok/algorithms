@@ -1,4 +1,4 @@
-package algorithms.tree.mutable
+package tree.mutable
 
 import scala.collection.mutable.ArrayBuffer
 

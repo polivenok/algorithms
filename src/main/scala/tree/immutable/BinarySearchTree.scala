@@ -1,4 +1,4 @@
-package algorithms.tree.immutable
+package tree.immutable
 
 /*
  * Simple binary search tree (immutable)

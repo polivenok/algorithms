@@ -1,4 +1,4 @@
-package algorithms.sorting
+package sorting
 
 object SortingExtensions {
 
