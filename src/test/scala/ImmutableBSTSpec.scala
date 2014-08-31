@@ -1,4 +1,4 @@
-import algorithms.tree.immutable.BinarySearchTree
+import tree.immutable.BinarySearchTree
 import org.scalatest.{FlatSpec, Matchers}
 
 class ImmutableBSTSpec extends FlatSpec with Matchers {

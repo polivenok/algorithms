@@ -22,13 +22,6 @@ abstract sealed class BinarySearchTree[+T <% Ordered[T]] {
     traverse(this, None)
   }
 
-  def inOrder[E >: T <% Ordered[E]](callback: E => Unit) {
-    if (!isEmpty) {
-      left.inOrder(callback)
-      callback(value)
-      right.inOrder(callback)
-    }
-  }
 
   def sorted: List[T] = {
     def traverse(t: BinarySearchTree[T], l: List[T]): List[T] =

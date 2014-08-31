@@ -1,7 +1,7 @@
 import org.scalatest._
 import prop._
 
-import algorithms.sorting.SortingExtensions._
+import sorting.SortingExtensions._
 
 class ArraySortingSpec extends PropSpec with Checkers {
 
