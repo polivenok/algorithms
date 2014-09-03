@@ -1,7 +1,6 @@
 package graph
 
 import scala.collection.mutable
-import scala.collection.mutable.Stack
 
 case class Edge(from: String, to: String, weight: Double)
 
@@ -11,6 +10,8 @@ case class Vertex(id: String) {
   def addNeighbor(neighbor: String, weight: Double = 0) {
     connectedTo += (neighbor -> weight)
   }
+
+  def lengthTo(id: String) = connectedTo(id)
 
   def connections = connectedTo.keys
 
@@ -38,12 +39,12 @@ class Graph(edges: Edge*) {
 
   case class DiscoverableVertex(vertex: Vertex, var discovered: Boolean)
 
-  def DFS(id: String):Boolean = {
+  def DFS(id: String): Boolean = {
     val stack = mutable.Stack(DiscoverableVertex(vertices.head, discovered = false))
-    while(stack.nonEmpty){
+    while (stack.nonEmpty) {
       val vd = stack.pop()
-      if(vd.vertex.id == id) return true
-      if(!vd.discovered){
+      if (vd.vertex.id == id) return true
+      if (!vd.discovered) {
         vd.discovered = true
         vd.vertex.connections.foreach(id => stack.push(DiscoverableVertex(vertices_(id), discovered = false)))
       }
@@ -53,15 +54,45 @@ class Graph(edges: Edge*) {
 
   def BFS(id: String): Boolean = {
     val queue = mutable.Queue(DiscoverableVertex(vertices.head, discovered = false))
-    while(queue.nonEmpty){
+    while (queue.nonEmpty) {
       val vd = queue.dequeue()
-      if(vd.vertex.id == id) return true
-      if(!vd.discovered){
+      if (vd.vertex.id == id) return true
+      if (!vd.discovered) {
         vd.discovered = true
         vd.vertex.connections.foreach(id => queue.enqueue(DiscoverableVertex(vertices_(id), discovered = false)))
       }
     }
-     false
+    false
+  }
+
+  /**
+   * Find shortest paths from source to all connected vertices.
+   * @param source id of vertex
+   * @return map with key representing vertex id, and value as shortest distance
+   */
+  //TODO: Optimize to use heaps for finding min
+  def Dijkstra(source: String): Map[String, Double] = {
+    val distances = mutable.HashMap[String, Double]()
+    var buffer = mutable.HashMap[Vertex, Double]()
+
+    for ((id, vertex) <- vertices_) {
+      val distance = if (id == source) 0 else Double.MaxValue
+      buffer(vertex) = distance
+      distances(id) = distance
+    }
+
+    while (buffer.nonEmpty) {
+      val (vertex, distance) = buffer.minBy(_._2)
+      buffer -= vertex
+      for (neighbor <- vertex.connections) {
+        val alt = distance + vertex.lengthTo(neighbor)
+        if (alt < distances(neighbor)) {
+          distances(neighbor) = alt
+          buffer(Vertex(neighbor)) = alt
+        }
+      }
+    }
+    distances.toMap
   }
 
   override def toString: String = vertices_.values.map(_.toString).mkString("\n")
