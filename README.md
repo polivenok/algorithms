@@ -16,6 +16,12 @@ Tests are written in scala test using property based testing. To run tests execu
 
 * [Binary Search Tree](http://en.wikipedia.org/wiki/Binary_search_tree). [Mutable](https://github.com/polivenok/algorithms/blob/master/src/main/scala/tree/mutable/BinarySearchTree.scala) and [immutable and functional-like](https://github.com/polivenok/algorithms/blob/master/src/main/scala/tree/immutable/BinarySearchTree.scala).
 
+#### [Graphs](http://en.wikipedia.org/wiki/Graph_%28abstract_data_type%29)
+* [BFS](http://en.wikipedia.org/wiki/Breadth-first_search)
+* [DFS](http://en.wikipedia.org/wiki/Depth-first_search)
+* [Dijkstra](http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+
+
 #### Useful online resources 
  1. [Coursera, Algorithms: Design and Analysis from Standford](https://www.coursera.org/course/algo), [Part2](https://www.coursera.org/course/algo2)  
  2. [MIT, Introduction to Algorithms](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/)
