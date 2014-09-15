@@ -1,6 +1,6 @@
 Implementation of well known algorithms in scala for learning purposes.
 
-Tests are written in scala test using property based testing. To run tests execute
+Basic cases are covered with unit tests. To run tests execute
 
  `sbt test`
 
@@ -16,11 +16,16 @@ Tests are written in scala test using property based testing. To run tests execu
 
 * [Binary Search Tree](http://en.wikipedia.org/wiki/Binary_search_tree). [Mutable](https://github.com/polivenok/algorithms/blob/master/src/main/scala/tree/mutable/BinarySearchTree.scala) and [immutable and functional-like](https://github.com/polivenok/algorithms/blob/master/src/main/scala/tree/immutable/BinarySearchTree.scala).
 
-#### [Graphs](http://en.wikipedia.org/wiki/Graph_%28abstract_data_type%29)
+#### [Graphs](http://en.wikipedia.org/wiki/Graph_%28abstract_data_type%29). 
+
+[Graph structure represented by Adjacency list with implementation of the following algorithms:](https://github.com/polivenok/algorithms/blob/master/src/main/scala/graph/Graph.scala)
+
 * [BFS](http://en.wikipedia.org/wiki/Breadth-first_search)
 * [DFS](http://en.wikipedia.org/wiki/Depth-first_search)
 * [Dijkstra](http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 
+#### [Scheduling](http://riot.ieor.berkeley.edu/Applications/Scheduling/algorithms.html)
+* [Weighted Shortest Processing Time](https://github.com/polivenok/algorithms/blob/master/src/main/scala/Scheduler.scala)
 
 #### Useful online resources 
  1. [Coursera, Algorithms: Design and Analysis from Standford](https://www.coursera.org/course/algo), [Part2](https://www.coursera.org/course/algo2)  

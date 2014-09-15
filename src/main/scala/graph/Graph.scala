@@ -101,6 +101,14 @@ class Graph(edges: Edge*) {
     calculatePath(source, previous, distances)
   }
 
+  /**
+   * Transforms source vertex, shortest distances, and map with previous vertices into more readable format
+   *
+   * @param source
+   * @param previous
+   * @param distances
+   * @return map with target vertex id and Path to it from source
+   */
   private def calculatePath(source: String, previous: mutable.HashMap[String, String], distances: mutable.HashMap[String, Double]): Map[String, Path] = {
     var pathMap =  mutable.HashMap[String, Path]()
     for(id <- vertices_.keySet) {
