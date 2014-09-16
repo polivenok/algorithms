@@ -18,7 +18,7 @@ Basic cases are covered with unit tests. To run tests execute
 
 #### [Graphs](http://en.wikipedia.org/wiki/Graph_%28abstract_data_type%29). 
 
-[Graph structure represented by Adjacency list with implementation of the following algorithms:](https://github.com/polivenok/algorithms/blob/master/src/main/scala/graph/Graph.scala)
+[Graph structure represented by adjacency list with implementation of the following algorithms:](https://github.com/polivenok/algorithms/blob/master/src/main/scala/graph/Graph.scala)
 
 * [BFS](http://en.wikipedia.org/wiki/Breadth-first_search)
 * [DFS](http://en.wikipedia.org/wiki/Depth-first_search)
@@ -26,6 +26,9 @@ Basic cases are covered with unit tests. To run tests execute
 
 #### [Scheduling](http://riot.ieor.berkeley.edu/Applications/Scheduling/algorithms.html)
 * [Weighted Shortest Processing Time](https://github.com/polivenok/algorithms/blob/master/src/main/scala/Scheduler.scala)
+
+#### [Dynamic Programming](http://en.wikipedia.org/wiki/Dynamic_programming)
+* [Solving](https://github.com/polivenok/algorithms/blob/master/src/main/scala/Knapsack.scala) [Knapsack problem](http://en.wikipedia.org/wiki/Knapsack_problem)
 
 #### Useful online resources 
  1. [Coursera, Algorithms: Design and Analysis from Standford](https://www.coursera.org/course/algo), [Part2](https://www.coursera.org/course/algo2)  
